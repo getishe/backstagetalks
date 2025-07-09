@@ -1,0 +1,62 @@
+<!DOCTYPE
+  html
+  > <html
+  lang="en"
+  > <head
+  > <meta
+  charset="UTF-8"
+  > <title
+  > Scroll
+  Snap
+  Example</title
+  > <link
+  rel="stylesheet"
+  href="styles.css"
+  > </head
+  > <body
+  > <div
+  class="container"
+  > <section
+  class="snap-section"
+  style="background-color: #ffadad;"
+  > Section
+  1</section
+  > <section
+  class="snap-section"
+  style="background-color: #ffd6a5;"
+  > Section
+  2</section
+  > <section
+  class="snap-section"
+  style="background-color: #fdffb6;"
+  > Section
+  3</section
+  > <section
+  class="snap-section"
+  style="background-color: #caffbf;"
+  > Section
+  4</section
+  > </div
+  > </body
+  > </html
+  > body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  scroll-snap-align: start;
+}
