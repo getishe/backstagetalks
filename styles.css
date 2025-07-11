@@ -17,19 +17,24 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   max-width: 1330px;
   border: 2px solid red;
   margin: 1rem auto;
 }
 
 header {
-  grid-column: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
-main {
-  grid-column: 2;
+header img {
+  position: static;
+  width: 260px;
+}
+
+aside#contact {
+  position: relative;
+  background-color: #00c1b5;
 }
 
 /* <!DOCTYPE
