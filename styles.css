@@ -1,3 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: var(var(--primary-color), #ffffff);
+  --secondary-color: var(var(--secondary-color), #00c1b5);
+  --third-color: var(var(--third-color), #ffbe00);
+  --fourth-color: var(var(--fourth-color), #ff651a);
+  --fifth-color: var(var(--fifth-color), #1d3fbb);
+  --six-color: var(var(--six-color), #e30512);
+  --seven-color: var(var(--seven-color), #ff608c);
+  --eight-color: var(var(--eight-color), #f6e0a4);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1330px;
+  border: 2px solid red;
+  margin: 1rem auto;
+}
+
+header {
+  grid-column: 1;
+}
+
+main {
+  grid-column: 2;
+}
+
 /* <!DOCTYPE
   html
   > <html
