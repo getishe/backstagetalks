@@ -14,7 +14,7 @@
   --seven-color: var(var(--seven-color), #ff608c);
   --eight-color: var(var(--eight-color), #f6e0a4);
 }
-img {
+picture img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -35,16 +35,88 @@ body {
 }
 
 header img {
-  position: fixed;
+  position: static;
+  margin-top: 0.7rem;
+  border: 2px solid red;
   width: 260px;
 }
 
-header aside#contact {
+main {
+  border: 2px solid blueviolet;
+  margin-top: -22px;
+}
+/* 
+/* header aside {
   border: 2px solid red;
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(665px); /* Half of the max-width (1330px/2) */
+/* } */
+main {
+  display: grid;
+  justify-content: center;
+  /* height: 100vh; */
+  /* overflow: none; */
+  /* scroll-snap-type: y mandatory; */
+}
+
+section img {
+  width: 420px;
+  border: none;
+  height: auto;
+}
+footer {
+  position: relative;
+  border: 2px solid blue;
+  margin: 0.8rem auto;
+}
+
+footer aside#contact {
+  position: absolute;
+  bottom: 0;
   right: 0;
 }
+footer .foot-backstage {
+  position: relative;
+  width: 299px;
+  height: auto;
+  line-height: 25px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.foot-backstage span {
+  font-size: 18px;
+}
+
+.foot-backstage p {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+@media screen and (min-width: 1024px) {
+  .list {
+    display: none;
+  }
+}
+
+/* @media screen and (min-width: 1023px) {
+  body {
+    overflow: none;
+    -ms-overflow-style: none;  */
+/* IE and Edge */
+/* -webkit-overflow-scrolling: touch;  */
+/* iOS momentum scrolling */
+/* }
+
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;  */
+/* Chrome, Safari, Opera */
+/* }
+} */
 
 /* <!DOCTYPE
   html
