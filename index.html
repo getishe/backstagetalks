@@ -275,19 +275,101 @@
 </html>
 
 <!-- 
-  <div class="fixed-box box">Fixed (Top Right)</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Example</title>
+ 
+</head>
+<body>
+
+  <div class="fixed-box">Fixed Box (Always in top-right)</div>
+
+  <div class="static-box">Static Box (default flow)</div>
+
+  <div class="relative-box">Relative Box (20px offset)</div>
 
   <div class="container">
-    <div class="static-box box">Static Position (default)</div>
+    <p>This container is relative positioned</p>
+    <div class="absolute-box">Absolute Box (inside container)</div>
+  </div>
 
-    <div class="relative-box box">Relative Position (moved from original)</div>
+  <div class="sticky-box">Sticky Box (sticks to top on scroll)</div>
 
-    <div class="absolute-container">
-      <div class="absolute-box box">Absolute Position (inside container)</div>
-    </div>
+  <div class="content">
+    <p>Scroll down to see the sticky and fixed boxes in action.</p>
+  </div>
 
-    <div class="sticky-box box">Sticky Position (sticks when scrolling)</div>
+</body>
+</html> -->
 
-    <p>Scroll down to see how fixed and sticky elements behave.</p>
-    <p style="margin-top: 800px;">More content here...</p>
-  </div> -->
+<!-- 
+ body {
+      margin: 0;
+      padding: 0;
+      height: 2000px; /* for scroll effect */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Static - default */
+    .static-box {
+      position: static;
+      background-color: lightgray;
+      padding: 10px;
+      margin: 20px;
+    }
+
+    /* Relative */
+    .relative-box {
+      position: relative;
+      background-color: lightblue;
+      top: 20px;
+      left: 20px;
+      padding: 10px;
+      margin: 20px;
+    }
+
+    /* Absolute */
+    .container {
+      position: relative;
+      background-color: #eee;
+      height: 300px;
+      margin: 20px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: tomato;
+      color: white;
+      padding: 10px;
+    }
+
+    /* Fixed */
+    .fixed-box {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: purple;
+      color: white;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    /* Sticky */
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background-color: gold;
+      padding: 10px;
+      margin: 0;
+      z-index: 500;
+    }
+
+    .content {
+      height: 1500px;
+      background: linear-gradient(#fff, #ccc);
+      padding: 20px;
+    } -->
