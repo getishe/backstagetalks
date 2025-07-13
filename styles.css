@@ -43,7 +43,7 @@ header img {
 
 main {
   border: 2px solid blueviolet;
-  margin-top: -22px;
+  /* margin-top: -22px; */
 }
 /* 
 /* header aside {
@@ -54,14 +54,34 @@ main {
   transform: translateX(665px); /* Half of the max-width (1330px/2) */
 /* } */
 main {
-  display: grid;
+  display: flex;
   justify-content: center;
-  /* height: 100vh; */
+  align-items: center;
+  flex-direction: column;
+  margin: -22px 0 auto;
+  min-height: 100vh;
   /* overflow: none; */
   /* scroll-snap-type: y mandatory; */
 }
 
+.issue-info {
+  display: flex;
+  border: 2px solid green;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.issue-info p {
+  font-size: 18px;
+}
+
 section img {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   width: 420px;
   border: none;
   height: auto;
@@ -84,6 +104,7 @@ footer .foot-backstage {
   line-height: 25px;
   font-weight: bold;
   margin-bottom: 1rem;
+  padding-right: 2rem;
 }
 
 .foot-backstage span {
