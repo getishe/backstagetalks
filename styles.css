@@ -5,14 +5,14 @@
 }
 
 :root {
-  --primary-color: var(var(--primary-color), #ffffff);
-  --secondary-color: var(var(--secondary-color), #00c1b5);
-  --third-color: var(var(--third-color), #ffbe00);
-  --fourth-color: var(var(--fourth-color), #ff651a);
-  --fifth-color: var(var(--fifth-color), #1d3fbb);
-  --six-color: var(var(--six-color), #e30512);
-  --seven-color: var(var(--seven-color), #ff608c);
-  --eight-color: var(var(--eight-color), #f6e0a4);
+  --primary-color: #ffffff;
+  --secondary-color: #00c1b5;
+  --third-color: #ffbe00;
+  --fourth-color: #ff651a;
+  --fifth-color: #1d3fbb;
+  --six-color: #e30512;
+  --seven-color: #ff608c;
+  --eight-color: #f6e0a4;
 }
 picture img {
   display: block;
@@ -58,7 +58,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: -22px 0 auto;
+  margin: -20px 0 auto;
   min-height: 100vh;
   /* overflow: none; */
   /* scroll-snap-type: y mandatory; */
@@ -74,8 +74,21 @@ main {
   text-align: center;
 }
 
-.issue-info p {
-  font-size: 18px;
+.issue-info p:first-child {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 0 0 18px 0;
+  line-height: 1.5625rem;
+}
+
+:is(.buy-link, a, .store-link, a) {
+  /* border: 2px solid saddlebrown; */
+  /* color: var(--primary-color); */
+  padding: 3px;
+  font-weight: bold;
+  margin: 0 0 18px 0;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
 }
 
 section img {
