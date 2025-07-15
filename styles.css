@@ -14,6 +14,11 @@
   --seven-color: #ff608c;
   --eight-color: #f6e0a4;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 picture img {
   display: block;
   max-width: 100%;
@@ -32,6 +37,7 @@ body {
   max-width: 1330px;
   border: 2px solid red;
   margin: 0 auto;
+  transition: background-color 0.3s ease-in 0.18s;
 }
 
 header img {
