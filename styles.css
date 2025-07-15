@@ -5,12 +5,12 @@
 }
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #00c1b5;
+  --primary-color: #e30512;
+  --secondary-color: #1d3fbb;
   --third-color: #ffbe00;
   --fourth-color: #ff651a;
-  --fifth-color: #1d3fbb;
-  --six-color: #e30512;
+  --fifth-color: #00c1b5;
+  --six-color: #ffffff;
   --seven-color: #ff608c;
   --eight-color: #f6e0a4;
 }
@@ -91,6 +91,46 @@ main {
   line-height: 1.5625rem;
 }
 
+section {
+  padding-bottom: 35px;
+  width: 100%;
+  /* transition: background-color 0.3s ease;
+  transform: translateY(1px); */
+}
+
+#issue-8 {
+  background-color: var(--eight-color);
+  animation: fadeIn -0.1s ease-in-out;
+}
+
+#issue-7 {
+  background-color: var(--seven-color);
+}
+
+#issue-6 {
+  background-color: var(--six-color);
+}
+
+#issue-5 {
+  background-color: var(--fifth-color);
+}
+
+#issue-4 {
+  background-color: var(--fourth-color);
+}
+
+#issue-3 {
+  background-color: var(--third-color);
+}
+
+#issue-2 {
+  background-color: var(--secondary-color);
+}
+
+#issue-1 {
+  background-color: var(--primary-color);
+}
+
 section img {
   justify-content: center;
   align-items: center;
@@ -129,11 +169,11 @@ footer .foot-backstage {
   font-weight: normal;
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .list {
     display: none;
   }
-}
+} */
 
 /* @media screen and (min-width: 1023px) {
   body {

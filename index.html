@@ -303,101 +303,30 @@
 </html>
 
 <!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>CSS Position Example</title>
- 
-</head>
-<body>
-
-  <div class="fixed-box">Fixed Box (Always in top-right)</div>
-
-  <div class="static-box">Static Box (default flow)</div>
-
-  <div class="relative-box">Relative Box (20px offset)</div>
-
-  <div class="container">
-    <p>This container is relative positioned</p>
-    <div class="absolute-box">Absolute Box (inside container)</div>
-  </div>
-
-  <div class="sticky-box">Sticky Box (sticks to top on scroll)</div>
-
-  <div class="content">
-    <p>Scroll down to see the sticky and fixed boxes in action.</p>
-  </div>
-
-</body>
-</html> -->
+<section class="color-section" data-color="#ffcc00">Content 1</section>
+<section class="color-section" data-color="#66ccff">Content 2</section>
+<section class="color-section" data-color="#99ff99">Content 3</section> -->
 
 <!-- 
- body {
-      margin: 0;
-      padding: 0;
-      height: 2000px; /* for scroll effect */
-      font-family: Arial, sans-serif;
-    }
+body {
+/*   transition: background-color 0.5s ease; */
+   transition: background-color 0.9s ease-in 0.18s;
+}
 
-    /* Static - default */
-    .static-box {
-      position: static;
-      background-color: lightgray;
-      padding: 10px;
-      margin: 20px;
-    }
+.color-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} -->
+<!-- 
+const sections = document.querySelectorAll(".color-section");
 
-    /* Relative */
-    .relative-box {
-      position: relative;
-      background-color: lightblue;
-      top: 20px;
-      left: 20px;
-      padding: 10px;
-      margin: 20px;
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      document.body.style.backgroundColor = section.dataset.color;
     }
-
-    /* Absolute */
-    .container {
-      position: relative;
-      background-color: #eee;
-      height: 300px;
-      margin: 20px;
-    }
-
-    .absolute-box {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: tomato;
-      color: white;
-      padding: 10px;
-    }
-
-    /* Fixed */
-    .fixed-box {
-      position: fixed;
-      top: 0;
-      right: 0;
-      background-color: purple;
-      color: white;
-      padding: 10px;
-      z-index: 1000;
-    }
-
-    /* Sticky */
-    .sticky-box {
-      position: sticky;
-      top: 0;
-      background-color: gold;
-      padding: 10px;
-      margin: 0;
-      z-index: 500;
-    }
-
-    .content {
-      height: 1500px;
-      background: linear-gradient(#fff, #ccc);
-      padding: 20px;
-    } -->
+  });
+}); -->
