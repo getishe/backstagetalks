@@ -38,6 +38,9 @@ body {
   /* border: 2px solid red; */
   margin: 0 auto;
   transition: background-color 0.3s ease-in 0.18s;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 header img {
@@ -100,6 +103,8 @@ main {
 section {
   padding-bottom: 35px;
   width: 100%;
+  scroll-snap-align: start;
+  height: 100vh;
   /* transition: background-color 0.3s ease;
   transform: translateY(1px); */
 }
@@ -118,19 +123,24 @@ footer {
   margin: 0.8rem auto;
 }
 
-footer aside#contact {
+footer aside#contact a {
+  border: 2px solid black;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 0; /* Matches the header img margin-top */
+  right: 50%;
+  transform: translateX(
+    665px
+  ); /* Half of the max-width (1330px/2) to align with the container edge */
+  margin-bottom: 0;
 }
 footer .foot-backstage {
   position: relative;
-  width: 299px;
+  width: 297.7px;
   height: auto;
   line-height: 25px;
   font-weight: bold;
   margin-bottom: 1rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 .foot-backstage span {
@@ -142,11 +152,11 @@ footer .foot-backstage {
   font-weight: normal;
 }
 
-/* @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .list {
     display: none;
   }
-} */
+}
 
 /* @media screen and (min-width: 1023px) {
   body {
