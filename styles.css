@@ -74,6 +74,8 @@ main {
 }
 
 .issue-info {
+  /* position: relative;
+  z-index: 2; */
   display: flex;
   /* border: 2px solid green; */
   margin: 0 auto;
@@ -100,8 +102,16 @@ main {
   line-height: 1.5625rem;
 }
 
+a:not(.buy-link, .store-link) {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:not(.buy-link, .store-link):hover {
+  text-decoration: underline;
+}
 section {
   padding-bottom: 35px;
+  margin-bottom: 5rem;
   width: 100%;
   scroll-snap-align: start;
   height: 100vh;
