@@ -92,8 +92,30 @@ main {
   line-height: 1.5625rem;
 }
 
-:is(.buy-link, a, .store-link, a) {
-  /* border: 2px solid saddlebrown; */
+#issue-7 .issue-info > p:nth-of-type(2) {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/* :is(.buy-link, a, .store-link, a) { */
+/* border: 2px solid saddlebrown; */
+/* color: var(--primary-color); */
+/* padding: 3px;
+  font-weight: bold;
+  margin: 0 0 18px 0;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+} */
+
+/* a:not(.buy-link, .store-link) {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:not(.buy-link, .store-link):hover {
+  text-decoration: underline;
+} */
+/* For buy/store links */
+.buy-link,
+.store-link {
   /* color: var(--primary-color); */
   padding: 3px;
   font-weight: bold;
@@ -102,11 +124,21 @@ main {
   line-height: 1.5625rem;
 }
 
-a:not(.buy-link, .store-link) {
+/* For all other links */
+/* .buy-link,
+a,
+.store-link a {
+  color: #ffffff;
+  text-decoration: none;
+} */
+
+.buy-link a,
+.store-link a:not(p) {
   color: #ffffff;
   text-decoration: none;
 }
-a:not(.buy-link, .store-link):hover {
+
+a:not(.buy-link):not(.store-link):hover {
   text-decoration: underline;
 }
 section {
@@ -130,18 +162,22 @@ section img {
 footer {
   position: relative;
   /* border: 2px solid blue; */
-  margin: 0.8rem auto;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 footer aside#contact a {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   position: absolute;
   bottom: 0; /* Matches the header img margin-top */
   right: 50%;
   transform: translateX(
     665px
   ); /* Half of the max-width (1330px/2) to align with the container edge */
-  margin-bottom: 0;
+  padding-bottom: 20px;
+  color: #251d20;
+  font-size: 18px;
+  font-weight: bold;
 }
 footer .foot-backstage {
   position: relative;
@@ -155,11 +191,25 @@ footer .foot-backstage {
 
 .foot-backstage span {
   font-size: 18px;
+  color: #251d20;
 }
 
 .foot-backstage p {
   font-size: 12px;
   font-weight: normal;
+  color: #251d20;
+}
+
+.foot-backstage a {
+  font-size: 12px;
+  font-weight: normal;
+  color: #251d20;
+}
+
+footer .privacy {
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: #251d20;
 }
 
 @media screen and (min-width: 1024px) {
