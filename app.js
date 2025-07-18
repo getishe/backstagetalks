@@ -21,6 +21,25 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const sectionsix = document.querySelector("section#issue-6");
+const fontColor = document.querySelectorAll(".buy-link, a .store-link, a");
+window.addEventListener("scroll", () => {
+  if (!sectionsix) return;
+  const changea = sectionsix.getBoundingClientRect();
+  if (
+    changea.top <= window.innerHeight / 2 &&
+    changea.bottom >= window.innerHeight / 2
+  ) {
+    fontColor.forEach((el) => {
+      el.style.color = "pink";
+    });
+  } else {
+    fontColor.forEach((el) => {
+      el.style.color = "";
+    });
+  }
+});
+
 window.addEventListener("scroll", () => {
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
