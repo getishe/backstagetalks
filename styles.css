@@ -147,8 +147,8 @@ section {
   width: 100%;
   scroll-snap-align: start;
   height: 100vh;
-  /* transition: background-color 0.3s ease;
-  transform: translateY(1px); */
+  transition: background-color 0.3s ease;
+  transform: translateY(1px);
 }
 
 section img {
