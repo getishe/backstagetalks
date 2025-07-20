@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  /* overflow-x: hidden; */
 }
 
 picture img {
@@ -40,6 +41,8 @@ body {
   transition: background-color 0.3s ease-in 0.18s;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
   height: 100vh;
 }
 
@@ -69,7 +72,7 @@ main {
   flex-direction: column;
   margin: -20px 0 auto;
   min-height: 100vh;
-  /* overflow: none; */
+  overflow: none;
   /* scroll-snap-type: y mandatory; */
 }
 
@@ -148,7 +151,8 @@ section {
   scroll-snap-align: start;
   height: 100vh;
   transition: background-color 0.3s ease;
-  transform: translateY(1px);
+  /* transform: translateY(1px); */
+  transform: none;
 }
 
 section img {
@@ -170,10 +174,13 @@ footer aside#contact a {
   /* border: 2px solid black; */
   position: absolute;
   bottom: 0; /* Matches the header img margin-top */
-  right: 50%;
-  transform: translateX(
+  /* right: 50%; */
+  /* transform: translateX(
     665px
-  ); /* Half of the max-width (1330px/2) to align with the container edge */
+  );  */
+  /* Half of the max-width (1330px/2) to align with the container edge */
+  right: 0;
+  transform: none;
   padding-bottom: 20px;
   color: #251d20;
   font-size: 18px;
@@ -212,14 +219,70 @@ footer .privacy {
   color: #251d20;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1023px) {
+  body {
+    max-width: 100%;
+    margin: 0;
+    /* border: 2px solid blue; */
+    padding: 0 20px;
+  }
   .list {
     display: none;
   }
+  footer aside#contact a {
+    transform: none;
+    right: 20px;
+    bottom: 0;
+  }
 }
 
-@media screen and (max-width: 1023px) {
-  .container {
+@media screen and (max-width: 768px) {
+  body {
+    /* max-width: 80%; */
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  footer {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* place-items: center; */
+  }
+
+  footer .foot-backstage {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  footer aside#contact a {
+    position: relative;
+    text-align: center;
+    right: auto;
+    width: 100%;
+    display: block;
+    margin: 40px auto;
+  }
+
+  footer .privacy {
+    margin-bottom: 80px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* @media screen and (max-width: 1023px) {
+  .list {
+   display:none;
+  }
+} */
+/* .container {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -232,8 +295,7 @@ footer .privacy {
     justify-content: center;
     font-size: 3rem;
     scroll-snap-align: start;
-  }
-}
+  } */
 
 /* @media screen and (min-width: 1023px) {
   body {
