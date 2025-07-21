@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
     changea.bottom >= window.innerHeight / 2
   ) {
     fontColor.forEach((el) => {
-      el.style.color = "pink";
+      el.style.color = "#e568ac";
     });
   } else {
     fontColor.forEach((el) => {
