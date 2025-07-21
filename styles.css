@@ -70,7 +70,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: -20px 0 auto;
+  margin: -50px 0 auto;
   min-height: 100vh;
   overflow: none;
   /* scroll-snap-type: y mandatory; */
@@ -145,14 +145,18 @@ a:not(.buy-link):not(.store-link):hover {
   text-decoration: underline;
 }
 section {
-  padding-bottom: 35px;
-  margin-bottom: 5rem;
+  padding: 35px 0;
+  margin: 0;
   width: 100%;
   scroll-snap-align: start;
-  height: 100vh;
+  min-height: 100vh;
   transition: background-color 0.3s ease;
   /* transform: translateY(1px); */
   transform: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 section img {
@@ -236,12 +240,16 @@ footer .privacy {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   body {
     /* max-width: 80%; */
     width: 100%;
     margin: 0;
     padding: 0 10px;
+  }
+  header img {
+    width: 160px;
+    margin-bottom: 12px;
   }
 
   footer {
