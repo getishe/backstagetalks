@@ -145,7 +145,7 @@ a:not(.buy-link):not(.store-link):hover {
   text-decoration: underline;
 }
 section {
-  padding: 35px 0;
+  padding: 27px 0;
   margin: 0;
   width: 100%;
   scroll-snap-align: start;
@@ -174,6 +174,9 @@ footer {
   padding-bottom: 20px;
 }
 
+.list {
+  display: none;
+}
 footer aside#contact a {
   /* border: 2px solid black; */
   position: absolute;
@@ -223,24 +226,35 @@ footer .privacy {
   color: #251d20;
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 992px) and (min-height: 650px) {
   html {
     scroll-behavior: smooth;
+    /* height: 100%; */
   }
-  /* body {
-    max-width: 1330px;
-    width: 100%;
-    height: 100vh;
-  }
+  /* body { */
+  /* scroll-behavior: smooth; */
+  /* max-width: 1330px; */
+  /* width: 100%; */
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  /* } */
 
   main {
-    height: 100vh; */
-  /* overflow-y: scroll; */
-  /* scroll-snap-type: y mandatory; */
-  /* padding-top: 70px;
+    /* height: 100vh; */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+    /* -webkit-overflow-scrolling: touch; */
+    /* padding-top: 70px;
     padding-bottom: 80px; */
-  /* box-sizing: border-box; */
-  /* } */
+    /* box-sizing: border-box; */
+  }
+
+  section {
+    min-height: 100vh;
+
+    scroll-snap-align: start;
+  }
 
   header img {
     position: fixed;
@@ -251,11 +265,14 @@ footer .privacy {
 
   footer aside#contact a {
     position: fixed;
-    top: 0.7rem;
-    right: 50%;
-    padding-bottom: 0;
+    top: 0;
+    right: 0;
+    padding-top: 1rem;
+    color: #251d20;
+    /* padding-bottom: 0; */
     z-index: 100;
-    transform: translateX(665px); /* Half of the max-width (1330px/2) */
+    transform: none;
+    /* Half of the max-width (1330px/2) */
   }
 
   footer .foot-backstage {
@@ -282,6 +299,7 @@ footer .privacy {
   }
   .list {
     position: fixed;
+    display: block;
     bottom: 0;
     right: 0;
     padding-right: 1rem;
@@ -292,7 +310,7 @@ footer .privacy {
   body {
     max-width: 100%;
     margin: 0;
-    /* border: 2px solid blue; */
+
     padding: 0 20px;
   }
   .list {

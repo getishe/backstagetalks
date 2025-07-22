@@ -22,7 +22,7 @@ window.addEventListener("scroll", () => {
 });
 
 const sectionsix = document.querySelector("section#issue-6");
-const fontColor = document.querySelectorAll(".buy-link, a .store-link, a");
+const fontColor = document.querySelectorAll("a.buy, a.store");
 window.addEventListener("scroll", () => {
   if (!sectionsix) return;
   const changea = sectionsix.getBoundingClientRect();
