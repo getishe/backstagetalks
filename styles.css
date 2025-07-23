@@ -229,6 +229,8 @@ footer .privacy {
 @media (min-width: 992px) and (min-height: 650px) {
   html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
     /* height: 100%; */
   }
   /* body { */
@@ -239,20 +241,24 @@ footer .privacy {
   /* overflow: hidden; */
   /* } */
 
-  main {
-    /* height: 100vh; */
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+  /* main { */
+  /* height: 100vh; */
+  /* overflow-y: scroll;
+    scroll-snap-type: y mandatory; */
 
-    /* -webkit-overflow-scrolling: touch; */
-    /* padding-top: 70px;
+  /* -webkit-overflow-scrolling: touch; */
+  /* padding-top: 70px;
     padding-bottom: 80px; */
-    /* box-sizing: border-box; */
+  /* box-sizing: border-box; */
+  /* } */
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   section {
     min-height: 100vh;
-
+    /* height: 100vh; */
+    min-width: 100vw;
     scroll-snap-align: start;
   }
 
