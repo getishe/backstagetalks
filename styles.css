@@ -39,6 +39,7 @@ body {
   /* border: 2px solid red; */
   margin: 0 auto;
   transition: background-color 0.3s ease-in 0.18s;
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -237,6 +238,7 @@ footer .privacy {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+
     /* max-width: 1330px; */
     width: 100%;
     /* height: 100vh; */
@@ -274,9 +276,11 @@ footer .privacy {
     top: 0;
     left: 0;
     z-index: 100;
+    padding-left: 1rem;
   }
 
   footer aside#contact a {
+    padding-right: 1rem;
     position: fixed;
     top: 0;
     right: 0;
@@ -289,6 +293,7 @@ footer .privacy {
   }
 
   footer .foot-backstage {
+    padding-left: 1rem;
     position: fixed;
     /* top: 0; */
     bottom: 0;
@@ -296,8 +301,10 @@ footer .privacy {
   }
 
   footer h2 {
+    padding-left: 1rem;
     position: fixed;
     bottom: 0;
+    padding-bottom: 0.9rem;
   }
   ul {
     list-style: none;
@@ -309,13 +316,17 @@ footer .privacy {
   }
   ul li a {
     text-decoration: none;
+    color: #251d20;
+    font-size: 18px;
   }
   .list {
     position: fixed;
+
     display: block;
     bottom: 0;
     right: 0;
     padding-right: 1rem;
+    padding-bottom: 0.9rem;
   }
 }
 
