@@ -94,13 +94,13 @@ sections.forEach((section) => observer.observe(section));
 //   }
 // });
 
-// Listen for scroll events to update the URL hash based on the section in view
-// window.addEventListener("scroll", () => {
-//   sections.forEach((section) => {
-//     const rect = section.getBoundingClientRect();
-//     // If the section's top is in the upper half of the viewport, update the URL hash
-//     if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-//       history.replaceState(null, null, `/#${section.id}`);
-//     }
-//   });
-// });
+//Listen for scroll events to update the URL hash based on the section in view
+window.addEventListener("scroll", () => {
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    // If the section's top is in the upper half of the viewport, update the URL hash
+    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+      history.replaceState(null, null, `/#${section.id}`);
+    }
+  });
+});
