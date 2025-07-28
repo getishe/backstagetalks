@@ -116,6 +116,12 @@ sections.forEach((section) => observer.observe(section));
 // Create a new IntersectionObserver to update the URL hash based on the section in view.
 // // This is more performant than using a scroll event listener.
 // Use IntersectionObserver for hash updates
+// ...existing code...
+
+// Remove or comment out the scroll event listener that updates the hash
+// window.addEventListener("scroll", ...);
+
+// Use IntersectionObserver for hash updates
 const hashObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -134,3 +140,31 @@ const hashObserver = new IntersectionObserver(
 sections.forEach((section) => hashObserver.observe(section));
 
 // ...existing code...
+
+// ...existing code...
+
+document.querySelectorAll("li a").forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// document.querySelectorAll(".nav a").forEach((link) => {
+//   link.addEventListener("click", function (event) {
+//     event.preventDefault(); // Prevent default jump
+
+//     const targetId = this.getAttribute("href").substring(1);
+//     const targetElement = document.getElementById(targetId);
+
+//     if (targetElement) {
+//       targetElement.scrollIntoView({ behavior: "smooth" });
+//     }
+//   });
+// });
