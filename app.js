@@ -36,11 +36,18 @@ function isSectionCentered(section) {
 }
 
 function isSectionCenteredHash(section) {
-  const react = section.getBoundingClientRect();
+  const make = section.getBoundingClientRect();
   const middle = window.innerHeight / 2;
+  // return statement
 
-  return react.top >= 0 && react.top <= middle;
+  return make.top >= 0 && make.top <= middle;
 }
+// function isSectionCenteredHash(section) {
+//   const rect = section.getBoundingClientRect();
+//   const middle = window.innerHeight / 2;
+
+//   return rect.top >= 0 && rect.top <= middle;
+// }
 // Create an IntersectionObserver to watch when sections enter/leave the viewport
 const observer = new IntersectionObserver(
   (entries) => {
@@ -60,10 +67,11 @@ const observer = new IntersectionObserver(
           el.style.color = "";
         });
       }
-      if (entry.isIntersecting && isSectionCenteredHash(entry.target)) {
-        // Update the URL hash when the section is intersect
-        history.replaceState(null, null, `#${entry.target.id}`);
-      }
+
+      // if (entry.isIntersecting && isSectionCenteredHash(entry.target)) {
+      //   // Update the URL hash when the section is intersect
+      //   history.replaceState(null, null, `#${entry.target.id}`);
+      // }
     });
   },
   {
@@ -95,12 +103,34 @@ sections.forEach((section) => observer.observe(section));
 // });
 
 //Listen for scroll events to update the URL hash based on the section in view
-window.addEventListener("scroll", () => {
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    // If the section's top is in the upper half of the viewport, update the URL hash
-    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-      history.replaceState(null, null, `/#${section.id}`);
-    }
-  });
-});
+// window.addEventListener("scroll", () => {
+//   sections.forEach((section) => {
+//     const rect = section.getBoundingClientRect();
+//     // If the section's top is in the upper half of the viewport, update the URL hash
+//     if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+//       history.replaceState(null, null, `/#${section.id}`);
+//     }
+//   });
+// });
+
+// Create a new IntersectionObserver to update the URL hash based on the section in view.
+// // This is more performant than using a scroll event listener.
+// Use IntersectionObserver for hash updates
+const hashObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        history.replaceState(null, null, `/#${entry.target.id}`);
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: "0px 0px -50% 0px", // Top half of viewport
+    threshold: 0,
+  }
+);
+
+sections.forEach((section) => hashObserver.observe(section));
+
+// ...existing code...
