@@ -321,12 +321,15 @@ footer .privacy {
   }
   .list {
     position: fixed;
-
+    z-index: 1000;
     display: block;
     bottom: 0;
     right: 0;
     padding-right: 1rem;
     padding-bottom: 0.9rem;
+  }
+  .li a {
+    pointer-events: auto;
   }
 }
 

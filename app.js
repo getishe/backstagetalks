@@ -143,19 +143,57 @@ sections.forEach((section) => hashObserver.observe(section));
 
 // ...existing code...
 
-document.querySelectorAll("li a").forEach((link) => {
-  link.addEventListener("click", function (event) {
-    event.preventDefault();
+// document.querySelectorAll("li a").forEach((link) => {
+//   link.addEventListener("click", function (event) {
+//     event.preventDefault();
 
-    const targetId = this.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
+//     const targetId = this.getAttribute("href").substring(1);
+//     const targetElement = document.getElementById(targetId);
 
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
+//     if (targetElement) {
+//       targetElement.scrollIntoView({ behavior: "smooth" });
+//       history.replaceState(null, null, `#${targetId}`); // Update hash right away
+//       targetElement.setAttribute("tabindex", "-1"); // Make focusable if not already
+//       targetElement.focus({ preventScroll: true }); // Move focus for accessibility
+//     }
+//   });
+// });
+
+// document.querySelectorAll("li a").forEach((link) => {
+//   link.addEventListener("click", function (event) {
+//     console.log("Link clicked:", this.getAttribute("href")); // Debug log
+//     event.preventDefault();
+
+//     const targetId = this.getAttribute("href").substring(1);
+//     const targetElement = document.getElementById(targetId);
+
+//     if (targetElement) {
+//       targetElement.scrollIntoView({ behavior: "smooth" });
+//       history.replaceState(null, null, `#${targetId}`);
+//       targetElement.setAttribute("tabindex", "-1");
+//       targetElement.focus({ preventScroll: true });
+//     } else {
+//       console.log("Target element not found:", targetId); // Debug log
+//     }
+//   });
+// });
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("li a").forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, null, `#${targetId}`);
+        targetElement.setAttribute("tabindex", "-1");
+        targetElement.focus({ preventScroll: true });
+      }
+    });
   });
 });
-
 // document.querySelectorAll(".nav a").forEach((link) => {
 //   link.addEventListener("click", function (event) {
 //     event.preventDefault(); // Prevent default jump
