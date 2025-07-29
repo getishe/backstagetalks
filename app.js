@@ -136,28 +136,57 @@ const hashObserver = new IntersectionObserver(
     threshold: 0,
   }
 );
-
 sections.forEach((section) => hashObserver.observe(section));
+const navLinks = document.querySelectorAll("li a");
 
-// ...existing code...
+const hover = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && isSectionCentered(entry.target)) {
+        const currentSection = entry.target.id;
 
-// ...existing code...
+        // Reset all links first
+        navLinks.forEach((link) => {
+          link.style.fontWeight = "";
+        });
 
-// document.querySelectorAll("li a").forEach((link) => {
-//   link.addEventListener("click", function (event) {
-//     event.preventDefault();
+        // Then set the appropriate color based on the section
+        if (currentSection === "issue-4") {
+          navLinks[4].style.fontWeight = "bold";
+        } else if (currentSection === "issue-3") {
+          navLinks[5].style.fontWeight = "bold";
+        } else if (currentSection === "issue-2") {
+          navLinks[6].style.fontWeight = "bold";
+        } else if (currentSection === "issue-1") {
+          navLinks[7].style.fontWeight = "bold";
+        }
+      }
+    });
+  },
+  {
+    root: null,
+    threshold: [0.5],
+    rootMargin: "0px",
+  }
+);
+// Make sure to observe all sections
+sections.forEach((section) => hover.observe(section));
 
-//     const targetId = this.getAttribute("href").substring(1);
-//     const targetElement = document.getElementById(targetId);
+document.querySelectorAll("li a").forEach((link) => {
+  link.addEventListener("click", function (event) {
+    console.log("Link clicked:", this.getAttribute("href")); // Debug log
+    event.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
 
-//     if (targetElement) {
-//       targetElement.scrollIntoView({ behavior: "smooth" });
-//       history.replaceState(null, null, `#${targetId}`); // Update hash right away
-//       targetElement.setAttribute("tabindex", "-1"); // Make focusable if not already
-//       targetElement.focus({ preventScroll: true }); // Move focus for accessibility
-//     }
-//   });
-// });
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, null, `#${targetId}`); // Update hash right away
+      targetElement.setAttribute("tabindex", "-1"); // Make focusable if not already
+      // targetElement.focus({ preventScroll: true }); // Move focus for accessibility
+    }
+  });
+});
 
 // document.querySelectorAll("li a").forEach((link) => {
 //   link.addEventListener("click", function (event) {
@@ -176,24 +205,26 @@ sections.forEach((section) => hashObserver.observe(section));
 //       console.log("Target element not found:", targetId); // Debug log
 //     }
 //   });
+// // });
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.querySelectorAll("li a").forEach((link) => {
+//     link.addEventListener("click", function (event) {
+//       event.preventDefault();
+
+//       const targetId = this.getAttribute("href").substring(1);
+//       const targetElement = document.getElementById(targetId);
+
+//       if (targetElement) {
+//         targetElement.scrollIntoView({ behavior: "smooth" });
+//         history.replaceState(null, null, `#${targetId}`);
+//         targetElement.setAttribute("tabindex", "-1");
+//         targetElement.focus({ preventScroll: true });
+//         targetElement.style.scrollMarginTop = "100px"; // Adjust scroll margin if needed
+//       }
+//     });
+//   });
 // });
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("li a").forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
 
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-        history.replaceState(null, null, `#${targetId}`);
-        targetElement.setAttribute("tabindex", "-1");
-        targetElement.focus({ preventScroll: true });
-      }
-    });
-  });
-});
 // document.querySelectorAll(".nav a").forEach((link) => {
 //   link.addEventListener("click", function (event) {
 //     event.preventDefault(); // Prevent default jump
