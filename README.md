@@ -1,6 +1,6 @@
 # Backstage Talks
 
-A responsive website showcase for Backstage Talks design magazine.
+A responsive website showcase for Backstage Talks design magazine newsletter.
 
 ## Description
 
