@@ -6,7 +6,7 @@
 //   sections.forEach((section) => {
 //     // Get the current position and dimensions of the section relative to the viewport
 //     const change = section.getBoundingClientRect();
-
+        console.log(change);
 //     // Check if the section is in the "active" viewing area:
 //     // 1. Top of section is above the middle of the viewport (window.innerHeight / 2)
 //     // 2. Bottom of section is below the middle of the viewport
